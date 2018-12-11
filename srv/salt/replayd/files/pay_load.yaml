@@ -1,0 +1,12 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: amp-DEPNO
+  namespace: amp-perf
+  labels:
+    app: amp
+    datetime: 17-Jul-18-10-40-CDT
+    feature: master
+    isLive: "true"
+    stage: latest
+    version: R18_7_DEPNO
