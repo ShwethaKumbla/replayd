@@ -1,14 +1,10 @@
-copy_ replayd:
-  file.managed:
-    - name: /home/salt/start.sh
-    - source: salt://replayd/files/start.sh
-    - user: replayd
-    - group: replayd
-    - mode: 755
-    - if_missing: /home/salt/start.sh
+replayd_service:
+  service.running:
+    - name: replayd
+    - enable: True
 
 start_replayd:
   cmd.run:
-    - name: service replayd.service start
+    - name: service replayd start
     - user: replayd
     - group: replayd

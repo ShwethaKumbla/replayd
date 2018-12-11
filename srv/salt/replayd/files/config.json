@@ -1,4 +1,4 @@
 {
-  "port": {{ port }},
-  "ip": {{ ip }}
+  "port": "{{ port }}",
+  "ip": "{{ ip }}"
 }

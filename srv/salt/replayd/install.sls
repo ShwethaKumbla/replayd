@@ -13,8 +13,10 @@
     - user: replayd
     - group: replayd
     - mode: 644
-    - ip: {{ salt['pillar.get']('replayd.ip') }}
-    - port: {{ salt['pillar.get']('replayd.port') }}
+    - template: jinja
+    - defaults:
+        ip: {{ grains['ip_interfaces']['eth0'][0] }}
+        port: {{ salt['pillar.get']('replayd:port') }}
     - if_missing: /etc/replayd/config.json
 
 /usr/local/bin/:

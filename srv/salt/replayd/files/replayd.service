@@ -5,9 +5,8 @@ Description=Replayd Service
 Type=simple
 User=replayd
 Group=replayd
-LimitNOFILE=64000
 WorkingDirectory=/usr/local/bin
-ExecStart=/usr/local/bin/replayd
+ExecStart=/usr/local/bin/replayd -configppath "/etc/replayd/config.json" -logpath "/home/replayd/replayd.log"
 Restart=always
 RestartSec=3
 
