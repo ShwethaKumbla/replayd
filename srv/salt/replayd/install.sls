@@ -19,6 +19,14 @@
         port: {{ salt['pillar.get']('replayd:port') }}
     - if_missing: /etc/replayd/config.json
 
+/home/replayd/replayd.log:
+  file.managed:
+    - name: /home/replayd/replayd.log
+    - user: replayd
+    - group: replayd
+    - mode: 644
+    - if_missing: /home/replayd/replayd.log
+
 /usr/local/bin/:
   file.managed:
     - name: /usr/local/bin/replayd
